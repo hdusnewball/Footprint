@@ -23,12 +23,8 @@
 
 ​		该变体旨在 “减少每张图处理的像素量” ，意味着我们必须处理应该处理的部分，对于其它无关部分就不进行过多处理。人类视觉有一个非常有趣的现象，我们对眼睛聚焦点的事物感知非常好，而非聚焦点外的事物感知比较弱（应该在图像处理课上说过）。鉴于这一点，CornerNet-Saccade 就提出了注意力图（Attention Map），用来描述整张图值得关注的区域。下图是 CornerNet-Saccade 的网络结构图。
 
-<<<<<<< Updated upstream
 ![1557317764974](./CornerNet_Saccade.png)
 =======
-![1557317764974](/home/brandewijn/.config/Typora/typora-user-images/1557317764974.png)
->>>>>>> Stashed changes
-
 
 
 ### Downsizing
@@ -41,16 +37,10 @@
 
 ​		该网络主要是用于预测注意力图，但同时会有概率预测出边界框。实际网络结构如下图所示。
 
-<<<<<<< Updated upstream
-> 完整介绍在 [CornerNet_Saccade 网络描述]([https://github.com/hdusnewball/Footprint/blob/master/Deep%20Learning/Detection/CornerNet/CornerNet_Saccade%20%E7%BD%91%E7%BB%9C%E6%8F%8F%E8%BF%B0.md](https://github.com/hdusnewball/Footprint/blob/master/Deep Learning/Detection/CornerNet/CornerNet_Saccade 网络描述.md))
+> 完整介绍在 [CornerNet_Saccade 网络描述](https://github.com/hdusnewball/Footprint/blob/master/Deep Learning/Detection/CornerNet/CornerNet_Saccade 网络描述.md)
 
 <img src="./Generating_Object_Location.png">
 =======
-> 完整介绍在 CornerNet_Saccade 网络描述
-
-<img src="/home/brandewijn/Document/GitKraken/Footprint/Deep Learning/Detection/CornerNet/Saccade_net.png">
->>>>>>> Stashed changes
-
 ​		网络一开始使用作者改进后的堆叠沙漏网络（stacked hourglass network），获取到三个尺寸的特征图用来分别预测三个尺寸的注意力图。同时还会将这三个尺寸拿去预测**左上角热点图**和**右下角热点图**（也就是 `tl_heats` 和 `br_heats` ），然后根据各自的 tags（CornerNet 中的 embeddings）来判断左上角和右下角是否匹配，匹配成功且达到最低阈值的一对Corner（左上角、右下角）将根据自己的 offset 调整位置并产生边界框 。
 
 > 注意力图包含的信息应该是按位（像素）存储 得分 和 物体尺寸信息，这样足以描述一个物体及其应有的边界框，具体如何描述没有提及。在这之后的网络应该只需要处理得分高于阈值的位置。
