@@ -1,2 +1,0 @@
-# CornerNet-Lite
-
