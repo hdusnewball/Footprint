@@ -1,5 +1,5 @@
 ### 预测过程
-![avatar](C:\Users\DSC\Desktop/图片1.png)
+![avatar](/图片1.png)
 ### 一、Extract region proposals
 #### Graph-Based Image Segmentation 预分割
 ```
