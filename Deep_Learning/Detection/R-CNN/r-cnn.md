@@ -1,5 +1,5 @@
 ### 预测过程
-![avatar](图片1.png)
+![avatar](img/rcnn预测过程.png)
 ### 一、Extract region proposals
 #### Graph-Based Image Segmentation 预分割
 ```
